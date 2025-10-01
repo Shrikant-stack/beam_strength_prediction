@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beam Strength Prediction</title>
+    <style>
+        body { font-family: Arial; background:#f9f9f9; display:flex; justify-content:center; padding:50px;}
+        form { background:white; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,.1);}
+        input, select { width:100%; padding:10px; margin:8px 0; }
+        button { background:#2563eb; color:white; padding:10px; border:none; width:100%; border-radius:5px;}
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <h2>Beam Strength Predictor</h2>
+        <input type="number" step="0.01" name="Beam_Length_m" placeholder="Beam Length (m)" required>
+        <input type="number" step="0.01" name="Thickness_m" placeholder="Thickness (m)" required>
+        
+        <select name="Cross_Section_Type" required>
+            <option value="I-Beam">I-Beam</option>
+            <option value="Box">Box</option>
+            <option value="Circular">Circular</option>
+        </select>
+        
+        <input type="number" step="0.01" name="Factor_of_Safety" placeholder="Factor of Safety" required>
+        
+        <select name="Material" required>
+            <option value="Steel">Steel</option>
+            <option value="Aluminum">Aluminum</option>
+            <option value="Concrete">Concrete</option>
+        </select>
+        
+        <button type="submit">Predict</button>
+        {% if prediction %}
+            <h3>Predicted Load for above given beam data: {{ prediction }} kN</h3>
+        {% endif %}
+    </form>
+</body>
+</html>
