@@ -1,0 +1,3 @@
+Method,Mean_Error_pct,Median_Error_pct,Max_Error_pct,Min_Error_pct,Within_5pct,Within_10pct,Materials_Used
+TNN (Tandem Neural Network — Metals Only),1014.7764,853.78,2962.59,29.39,0,0,"['Aluminum', 'Steel']"
+kNN Retrieval (Baseline — Metals Only),634.6168,90.51,2446.93,13.62,0,0,"['Steel', 'Aluminum']"
